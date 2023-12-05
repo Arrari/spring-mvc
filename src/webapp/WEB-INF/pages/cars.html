@@ -19,10 +19,10 @@
     <tr th:if="${cars.empty}">
         <td colspan = "4"> No Cars in list </td>
     <tr th:each="car : ${cars}">
-        <td><span th:utext = "${car.ID}"> ID </span>></td>
-        <td><span th:utext = "${car.model}"> ID </span>></td>
-        <td><span th:utext = "${car.series}"> ID </span>></td>
-        <td><span th:utext = "${car.price}"> ID </span>></td>
+        <td><span th:text = "${car.ID}"></span></td>
+        <td><span th:text = "${car.model}"></span></td>
+        <td><span th:text = "${car.series}"></span></td>
+        <td><span th:text = "${car.price}"></span></td>
     </tr>
     </tbody>
 </table>

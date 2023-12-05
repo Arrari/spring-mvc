@@ -12,8 +12,7 @@ public class CarController {
 
     private CarService carService = new CarService();
 
-    @GetMapping("/cars")
-    public String showCars(@RequestParam(required = false, defaultValue = "0") int count, Model model) {
+    public CarController() {
         carService.addCar(new Car("model1",1,1000));
         carService.addCar(new Car("model1",2,1500));
         carService.addCar(new Car("model2",2,2000));
@@ -22,6 +21,11 @@ public class CarController {
         carService.addCar(new Car("model3",7,40000));
         carService.addCar(new Car("model4",8,18000));
         carService.addCar(new Car("model4",2,1900));
+    }
+
+    @GetMapping("/cars")
+    public String showCars(@RequestParam(required = false, defaultValue = "0") int count, Model model) {
+
         if (count != 0 && count <5) {
             model.addAttribute("cars", carService.getNumCars(count));
             System.out.println(carService.getNumCars(count));

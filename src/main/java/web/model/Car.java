@@ -2,7 +2,7 @@ package web.model;
 
 public class Car {
 
-    private static int ID = 0;
+    private int ID = 0;
     private String model;
     private int series;
     private int price;
@@ -10,14 +10,23 @@ public class Car {
     public Car() {
     }
 
+    public Car(int ID, String model, int series, int price) {
+        this.ID = ID;
+        this.model = model;
+        this.series = series;
+        this.price = price;
+    }
     public Car(String model, int series, int price) {
-        ID++;
         this.model = model;
         this.series = series;
         this.price = price;
     }
 
-    public static int getID() {
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getID() {
         return ID;
     }
 
@@ -43,5 +52,15 @@ public class Car {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "ID= " + ID +
+                ", model=' " + model + '\'' +
+                ", series= " + series +
+                ", price= " + price +
+                " }";
     }
 }
